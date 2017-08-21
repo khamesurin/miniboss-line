@@ -72,8 +72,9 @@ if(count($last_price_ex) > 1){
 	$last_price = $data->last_price;
 }
 if($data->secondary_currency == 'BTC'){
-	if($last_price >= 139001){
-			$urlLine = "https://miniboss-line.herokuapp.com/send.php?name=".$data->secondary_currency."&set_price=139001&last_price=".$last_price;
+	$btc = 138000;
+	if($last_price >= $btc){
+			$urlLine = "https://miniboss-line.herokuapp.com/send.php?name=".$data->secondary_currency."&set_price=".$btc."&last_price=".$last_price;
 			$chLine = curl_init($urlLine);
 			curl_setopt($chLine, CURLOPT_CUSTOMREQUEST, "GET");
 			curl_setopt($chLine, CURLOPT_RETURNTRANSFER, true);
