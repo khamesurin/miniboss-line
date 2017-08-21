@@ -8,11 +8,7 @@ $last_price = $_GET['last_price'];
     "to": "U493a81bb89e58db5f619db64a94f7d08",
     "messages":[
         
-        {
-    "type": "image",
-    "originalContentUrl": "https://d2v7vc3vnopnyy.cloudfront.net/img/coins/'.$name.'.png",
-    "previewImageUrl": "https://d2v7vc3vnopnyy.cloudfront.net/img/coins/'.$name.'.png"
-},
+
 {
             "type":"text",
             "text":" '.$name.' , Price more than '.$set_price.' To '.$last_price.' ";
