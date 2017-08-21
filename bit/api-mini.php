@@ -96,5 +96,11 @@ $bg = ($ii++ & 1) ? "#ffffff":"#d9edf7";
 						}
 ?>
 </table>		
+<script>
+	function reload_one_m(){
+		window.location.reload();
+	}
+	setInterval(reload_one_m(),6000);
+</script>
 
 			
