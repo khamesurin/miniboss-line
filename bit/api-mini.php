@@ -36,9 +36,9 @@ $COOKIEFILE = $PATH . 'protect/cookies';
 	</tr>
 <?php            
             foreach($json as $data){
-
+$pairing_id = $data->pairing_id;
 //////////// https://bx.in.th/api/tradehistory/?pairing=1&date=2014-10-21
-/*$pairing_id = $data->pairing_id;
+/*
 $data_now = date('Y-m-d');
 $ch1[$pairing_id] = curl_init();
             curl_setopt($ch1[$pairing_id], CURLOPT_CONNECTTIMEOUT, 30);
@@ -75,14 +75,21 @@ if($data->secondary_currency == 'BTC'){
 	$btc = 137600;
 	if($last_price >= $btc){
 			$urlLine = "https://miniboss-line.herokuapp.com/send.php?name=".$data->secondary_currency."&set_price=".$btc."&last_price=".$last_price;
-			/*$chLine = curl_init($urlLine);
-			curl_setopt($chLine, CURLOPT_CUSTOMREQUEST, "GET");
-			curl_setopt($chLine, CURLOPT_RETURNTRANSFER, true);
-			//curl_setopt($chLine, CURLOPT_POSTFIELDS, $post);
-			//curl_setopt($chLine, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($chLine, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($chLine);
-			curl_close($chLine);*/
+			$chLine[$pairing_id] = curl_init();
+            curl_setopt($chLine[$pairing_id], CURLOPT_CONNECTTIMEOUT, 30);
+            curl_setopt($chLine[$pairing_id], CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/535.6 (KHTML, like Gecko) Chrome/16.0.897.0 Safari/535.6");
+            curl_setopt($chLine[$pairing_id], CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($chLine[$pairing_id], CURLOPT_SSL_VERIFYPEER, true);
+            curl_setopt($chLine[$pairing_id], CURLOPT_SSLVERSION, CURL_SSLVERSION_DEFAULT);
+            curl_setopt($chLine[$pairing_id], CURLOPT_CAINFO, $PATH . "cacert.pem");
+            curl_setopt($chLine[$pairing_id], CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($chLine[$pairing_id], CURLOPT_COOKIEJAR, $COOKIEFILE);
+            curl_setopt($chLine[$pairing_id], CURLOPT_COOKIEFILE, $COOKIEFILE);
+            curl_setopt($chLine[$pairing_id], CURLOPT_HEADER, 0);
+            curl_setopt($chLine[$pairing_id], CURLOPT_TIMEOUT, 120);
+            curl_setopt($chLine[$pairing_id], CURLOPT_URL, $urlLine);
+            $result = curl_exec($chLine[$pairing_id]);
+			curl_close($chLine[$pairing_id]);
 	}
 }
 if($data->change > 0){
@@ -95,7 +102,7 @@ if($data->change > 0){
 $bg = ($ii++ & 1) ? "#ffffff":"#d9edf7";
 ?>
 <tr bgcolor="<?=$bg;?>">
-		<td><?=$data->secondary_currency;?>  </td>
+		<td><?=$data->secondary_currency;?> <?=$result."1";?> </td>
 		<td><?=$data->primary_currency;?></td>
 		<td class="name" "><img src="https://d2v7vc3vnopnyy.cloudfront.net/img/coins/<?=$data->secondary_currency;?>.png" align="absmiddle" /> <?=$data->secondary_currency;?></td>
 		<td><?=$last_price;?></td>
