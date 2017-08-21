@@ -33,7 +33,7 @@ $events = json_decode($content, true);
     "messages":[
         {
             "type":"text",
-            "text":"Hello, world1"
+            "text":"Hello, world Images"
         },
         {
     "type": "image",
