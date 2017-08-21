@@ -2,18 +2,18 @@
 $access_token = 'g71f3DlMvXejMozh2QiWtpOWp0FFUvTWfQv+VGnSn0mvj9EpSCFXNakeWFM4XgkpyW3OGyHJ3DXHwuql0FMcaXXdtrphoWkCC+oV+5MpTb7VnA8sDcq2XlI2KHTdJVde4fuacAnvdSBFBcxOLzJ5CgdB04t89/1O/w1cDnyilFU=';
 
 $name = $_GET['name'];
-$set_price = $_GET['set_price'];
-$last_price = $_GET['last_price'];
-echo $txt_line = ' '.$name.' , Price more than '.$set_price.' To '.$last_price.' ';
 			$post = '{
     "to": "U493a81bb89e58db5f619db64a94f7d08",
     "messages":[
-        
-
-{
+        {
             "type":"text",
-            "text":" aaaaa "
-        }
+            "text":"Hello, world Images"
+        },
+        {
+    "type": "image",
+    "originalContentUrl": "https://drivesoft.co.th/tutorial/sources/system/line-bot-api/2017-02-13_6-58-39.png?v=0.0.5",
+    "previewImageUrl": "https://drivesoft.co.th/tutorial/sources/system/line-bot-api/2017-02-13_6-58-39.png?v=0.0.5"
+}
     ]
 }';
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
