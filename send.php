@@ -2,7 +2,7 @@
 $access_token = 'g71f3DlMvXejMozh2QiWtpOWp0FFUvTWfQv+VGnSn0mvj9EpSCFXNakeWFM4XgkpyW3OGyHJ3DXHwuql0FMcaXXdtrphoWkCC+oV+5MpTb7VnA8sDcq2XlI2KHTdJVde4fuacAnvdSBFBcxOLzJ5CgdB04t89/1O/w1cDnyilFU=';
 
 $name = $_GET['name'];
-$set_price = $_GET['set_price '];
+$set_price = $_GET['set_price'];
 $last_price = $_GET['last_price'];
 echo $txt_line = ' '.$name.' , Price more than '.$set_price.' To '.$last_price.' ';
 			$post = '{
