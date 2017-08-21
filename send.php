@@ -23,7 +23,8 @@ $events = json_decode($content, true);
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/push';
+			//$url = 'https://api.line.me/v2/bot/message/push';
+			$url = 'https://api.line.me/v2/bot/message/multicast';
 			$data = [
 				'to' => "khamenaja",
 				'messages' => "test"
@@ -34,7 +35,7 @@ $set_price = $_GET['set_price'];
 $last_price = $_GET['last_price'];
 $txt_line = ''.$name.' , Price more than '.$set_price.' To '.$last_price.' ';			
 			$post = '{
-    "to": ["U493a81bb89e58db5f619db64a94f7d08","U493a81bb89e58db5f619db64a94f7d08"],
+    "to": ["U493a81bb89e58db5f619db64a94f7d08","U331603b5a1d3ea48b78e7eb00364e196"],
     "messages":[
         {
             "type":"text",
