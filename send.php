@@ -26,9 +26,21 @@ $events = json_decode($content, true);
 			$url = 'https://api.line.me/v2/bot/message/push';
 			$data = [
 				'to' => "khamenaja",
-				'messages' => "test",
+				'messages' => "test"
 			];
-			$post = json_encode($data);
+			$post = '{
+    "to": "khamenaja",
+    "messages":[
+        {
+            "type":"text",
+            "text":"Hello, world1"
+        },
+        {
+            "type":"text",
+            "text":"Hello, world2"
+        }
+    ]
+}';
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
