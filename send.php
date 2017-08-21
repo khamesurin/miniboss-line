@@ -12,7 +12,7 @@ echo $txt_line = ' '.$name.' , Price more than '.$set_price.' To '.$last_price.'
 
 {
             "type":"text",
-            "text":" aaaaa ";
+            "text":" aaaaa "
         }
     ]
 }';
