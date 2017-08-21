@@ -71,7 +71,19 @@ if(count($last_price_ex) > 1){
 }else{
 	$last_price = $data->last_price;
 }
-
+if($data->secondary_currency == 'BTC'){
+	if($last_price >= 139001){
+			$urlLine = "https://miniboss-line.herokuapp.com/send.php?name=".$data->secondary_currency."&set_price=".139001."&last_price=".$last_price;
+			$chLine = curl_init($urlLine);
+			curl_setopt($chLine, CURLOPT_CUSTOMREQUEST, "GET");
+			curl_setopt($chLine, CURLOPT_RETURNTRANSFER, true);
+			//curl_setopt($chLine, CURLOPT_POSTFIELDS, $post);
+			//curl_setopt($chLine, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($chLine, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($chLine);
+			curl_close($chLine);
+	}
+}
 if($data->change > 0){
 	
 }elseif($data->change < 0){
@@ -100,7 +112,7 @@ $bg = ($ii++ & 1) ? "#ffffff":"#d9edf7";
 	function reload_one_m(){
 		window.location.reload();
 	}
-	setInterval(function(){ reload_one_m(); }, 10000);
+	setInterval(function(){ reload_one_m(); }, 20000);
 </script>
 
 			
