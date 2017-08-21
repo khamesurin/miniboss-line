@@ -52,7 +52,7 @@ $txt_line = ''.$name.' , Price more than '.$set_price.' To '.$last_price.' ';
 }*/
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
-			if(2 > 1){
+			if(0 > 1){
 				
 			
 			$ch = curl_init($url);
