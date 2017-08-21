@@ -11,7 +11,7 @@ $last_price = $_GET['last_price'];
 
 {
             "type":"text",
-            "text":" '.$name.' , Price more than '.$set_price.' To '.$last_price.' ";
+            "text":" aaaaa ";
         }
     ]
 }';
