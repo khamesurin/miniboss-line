@@ -95,7 +95,7 @@ if($data->change > 0){
 $bg = ($ii++ & 1) ? "#ffffff":"#d9edf7";
 ?>
 <tr bgcolor="<?=$bg;?>">
-		<td><?=$data->secondary_currency;?> <?=$urlLine;?></td>
+		<td><?=$data->secondary_currency;?>  </td>
 		<td><?=$data->primary_currency;?></td>
 		<td class="name" "><img src="https://d2v7vc3vnopnyy.cloudfront.net/img/coins/<?=$data->secondary_currency;?>.png" align="absmiddle" /> <?=$data->secondary_currency;?></td>
 		<td><?=$last_price;?></td>
