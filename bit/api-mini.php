@@ -100,7 +100,7 @@ $bg = ($ii++ & 1) ? "#ffffff":"#d9edf7";
 	function reload_one_m(){
 		window.location.reload();
 	}
-	//setInterval(reload_one_m,10000);
+	setInterval(function(){ reload_one_m(); }, 10000);
 </script>
 
 			
