@@ -29,7 +29,7 @@ $events = json_decode($content, true);
 				'messages' => "test"
 			];
 			$post = '{
-    "to": "khamenaja",
+    "to": "U493a81bb89e58db5f619db64a94f7d08",
     "messages":[
         {
             "type":"text",
