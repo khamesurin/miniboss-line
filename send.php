@@ -37,8 +37,8 @@ $events = json_decode($content, true);
         },
         {
     "type": "image",
-    "originalContentUrl": "https://example.com/original.jpg",
-    "previewImageUrl": "https://example.com/preview.jpg"
+    "originalContentUrl": "https://drivesoft.co.th/tutorial/sources/system/line-bot-api/2017-02-13_6-58-39.png?v=0.0.5",
+    "previewImageUrl": "https://drivesoft.co.th/tutorial/sources/system/line-bot-api/2017-02-13_6-58-39.png?v=0.0.5"
 }
     ]
 }';
