@@ -34,10 +34,6 @@ $events = json_decode($content, true);
         {
             "type":"text",
             "text":"Hello, world1"
-        },
-        {
-            "type":"text",
-            "text":"Hello, world2"
         }
     ]
 }';
