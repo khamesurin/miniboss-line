@@ -34,7 +34,12 @@ $events = json_decode($content, true);
         {
             "type":"text",
             "text":"Hello, world1"
-        }
+        },
+        {
+    "type": "image",
+    "originalContentUrl": "https://example.com/original.jpg",
+    "previewImageUrl": "https://example.com/preview.jpg"
+}
     ]
 }';
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
