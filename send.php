@@ -51,6 +51,9 @@ $txt_line = ''.$name.' , Price more than '.$set_price.' To '.$last_price.' ';
 }*/
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
+			if(0 > 1){
+				
+			
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -61,6 +64,7 @@ $txt_line = ''.$name.' , Price more than '.$set_price.' To '.$last_price.' ';
 			curl_close($ch);
 
 			echo $result . "\r\n";
+			}
 		//}
 	//}
 //}
