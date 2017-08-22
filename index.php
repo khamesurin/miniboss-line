@@ -18,12 +18,14 @@ if (!is_null($events['events'])) {
 		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			
-			$PATH = dirname(__FILE__) . '/';
+			
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 //////////// Call API
+			$PATH = dirname(__FILE__) . '/';
+			$COOKIEFILE = $PATH . 'protect/cookies';
 			$pairing_id = 1;
 			$urlLine = "https://miniboss-line.herokuapp.com/bit/api-calling.php?name=".$text;
 			$chLine[$pairing_id] = curl_init();
@@ -44,7 +46,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $result.$urlLine
+				'text' => $text.$result.$urlLine
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
