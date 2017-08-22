@@ -83,9 +83,12 @@ $all_name .= $secondary_currency." ";
 if($_GET[name]){
 	$name_api = strtoupper($_GET[name]);
 	if($arr_id[$name_api] > 0){
-		echo "Lasted : ".$arr_last[$name_api];
+		echo "Name : ".$name_api;
+		echo "\r\nLasted : ".$arr_last[$name_api];
 		echo "\r\nChange : ".$arr_change[$name_api]." %";
-		echo "<br />";
+		echo "\r\n";
+		echo "********************";
+		echo "\r\n";
 		echo "รายการอื่น ๆ \r\n";
 		echo $all_name;
 		
