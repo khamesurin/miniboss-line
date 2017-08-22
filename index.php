@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			
-			$PATH = dirname(__FILE__) . '/bit';
+			$PATH = dirname(__FILE__) . '/';
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
@@ -44,7 +44,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $result
+				'text' => $result.$urlLine
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
