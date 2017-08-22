@@ -73,6 +73,7 @@ $arr_change[$secondary_currency] = $data->change;
 
 //secondary_currency primary_currency change volume_24hours
 
+$all_name .= $secondary_currency." ";
 ?>
 
 <?php            	
@@ -82,8 +83,12 @@ $arr_change[$secondary_currency] = $data->change;
 if($_GET[name]){
 	$name_api = strtoupper($_GET[name]);
 	if($arr_id[$name_api] > 0){
-		echo " Lasted : ".$arr_last[$name_api];
-		echo " Change : ".$arr_change[$name_api]." %";
+		echo "Lasted : ".$arr_last[$name_api];
+		echo "\r\nChange : ".$arr_change[$name_api]." %";
+		echo "<br />";
+		echo "รายการอื่น ๆ \r\n";
+		echo $all_name;
+		
 	}else{
 		echo "Not Found This Name :: ".$name_api;
 	}
