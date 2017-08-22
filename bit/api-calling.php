@@ -86,11 +86,11 @@ if($_GET[name]){
 		echo "Name : ".$name_api;
 		echo "\r\nLasted : ".$arr_last[$name_api];
 		echo "\r\nChange : ".$arr_change[$name_api]." %";
-		echo "\r\n";
+		/*echo "\r\n";
 		echo "********************";
 		echo "\r\n";
 		echo "รายการอื่น ๆ \r\n";
-		echo $all_name;
+		echo $all_name;*/
 		
 	}else{
 		echo "Not Found This Name :: ".$name_api;
