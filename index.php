@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 		
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			
-			
+			$PATH = dirname(__FILE__) . '/bit';
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
