@@ -42,11 +42,12 @@ if (!is_null($events['events'])) {
       curl_setopt($chLine[$pairing_id], CURLOPT_TIMEOUT, 120);
       curl_setopt($chLine[$pairing_id], CURLOPT_URL, $urlLine);
       $result = curl_exec($chLine[$pairing_id]);
+      $last_result = trim($result);
 			curl_close($chLine[$pairing_id]);
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $result
+				'text' => $last_result
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
