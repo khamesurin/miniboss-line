@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 //////////// Call API
 			$pairing_id = 1;
-			$urlLine = "https://miniboss-line.herokuapp.com/api-calling.php?name=".$text;
+			$urlLine = "https://miniboss-line.herokuapp.com/bit/api-calling.php?name=".$text;
 			$chLine[$pairing_id] = curl_init();
       curl_setopt($chLine[$pairing_id], CURLOPT_CONNECTTIMEOUT, 30);
       curl_setopt($chLine[$pairing_id], CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/535.6 (KHTML, like Gecko) Chrome/16.0.897.0 Safari/535.6");

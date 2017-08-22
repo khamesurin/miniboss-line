@@ -69,6 +69,7 @@ if(count($last_price_ex) > 1){
 
 $arr_id[$secondary_currency] = $data->pairing_id;
 $arr_last[$secondary_currency] = $last_price;
+$arr_change[$secondary_currency] = $data->change;
 
 //secondary_currency primary_currency change volume_24hours
 
@@ -79,9 +80,16 @@ $arr_last[$secondary_currency] = $last_price;
 						}
 
 if($_GET[name]){
-	echo $arr_id[$_GET[name]];
-	echo "\r\n";
-	echo $arr_last[$_GET[name]];
+	$name_api = strtoupper($_GET[name]);
+	if($arr_id[$name_api] > 0){
+		echo " Lasted : ".$arr_last[$name_api];
+		echo " Change : ".$arr_change[$name_api]." %";
+	}else{
+		echo "Not Found This Name :: ".$name_api;
+	}
+	
+}else{
+	echo "Name Empty Please Input Name !!!";
 }
 
 ?>
